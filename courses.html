@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse all 36 Solex Technological Hub frontend development classes with filters, search, and expandable outlines." />
+    <title>Course Catalog | Solex Technological Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="courses-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Primary navigation">
+        <div class="container nav-inner">
+          <a class="brand" href="index.html#hero">
+            <span class="brand-mark">ST</span>
+            <span class="brand-copy">
+              <span class="brand-name">Solex Technological Hub</span>
+              <span class="brand-tagline"
+                >Frontend training built for ambitious beginners</span
+              >
+            </span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navPanel"
+            aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="nav-panel" id="navPanel">
+            <ul class="nav-links">
+              <li><a href="index.html#hero" class="nav-link">Home</a></li>
+              <li><a href="index.html#paths" class="nav-link">Paths</a></li>
+              <li><a href="index.html#curriculum" class="nav-link">Curriculum</a></li>
+              <li><a href="courses.html" class="nav-link active">Courses</a></li>
+              <li><a href="index.html#about" class="nav-link">About</a></li>
+              <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="mailto:support@solextech.com" class="nav-cta">Email Admissions</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="courses-hero">
+        <div class="container courses-hero-grid">
+          <div class="courses-hero-copy" data-reveal>
+            <p class="eyebrow eyebrow-dark">Course Catalog</p>
+            <h1>All 36 classes, organized into one searchable frontend roadmap.</h1>
+            <p class="courses-hero-text">
+              Explore the full program by phase, search for specific topics, and
+              expand each class to see learning objectives, resources, and course
+              content.
+            </p>
+          </div>
+
+          <div class="courses-hero-panel" data-reveal>
+            <article class="hero-note-card">
+              <p class="hero-note-label">At a glance</p>
+              <div class="hero-note-grid">
+                <div>
+                  <strong>36</strong>
+                  <span>classes</span>
+                </div>
+                <div>
+                  <strong>6</strong>
+                  <span>phases</span>
+                </div>
+                <div>
+                  <strong>16</strong>
+                  <span>weeks</span>
+                </div>
+                <div>
+                  <strong>1</strong>
+                  <span>cohesive path</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light courses-catalog">
+        <div class="container courses-layout">
+          <aside class="filters-sidebar" data-reveal>
+            <div class="sidebar-block">
+              <label class="field-label" for="searchInput">Search classes</label>
+              <input
+                id="searchInput"
+                class="catalog-input"
+                type="search"
+                placeholder="Search title, topic, or objective" />
+            </div>
+
+            <div class="sidebar-block">
+              <p class="field-label">Filter by phase</p>
+
+              <label class="filter-chip">
+                <input
+                  type="checkbox"
+                  class="phase-filter"
+                  data-phase="all"
+                  checked />
+                <span>All phases</span>
+              </label>
+
+              <label class="filter-chip">
+                <input type="checkbox" class="phase-filter" data-phase="0" />
+                <span>Phase 0 / Tools</span>
+              </label>
+
+              <label class="filter-chip">
+                <input type="checkbox" class="phase-filter" data-phase="1" />
+                <span>Phase 1 / HTML</span>
+              </label>
+
+              <label class="filter-chip">
+                <input type="checkbox" class="phase-filter" data-phase="2" />
+                <span>Phase 2 / CSS</span>
+              </label>
+
+              <label class="filter-chip">
+                <input type="checkbox" class="phase-filter" data-phase="3" />
+                <span>Phase 3 / JavaScript</span>
+              </label>
+
+              <label class="filter-chip">
+                <input type="checkbox" class="phase-filter" data-phase="4" />
+                <span>Phase 4 / Projects</span>
+              </label>
+
+              <label class="filter-chip">
+                <input type="checkbox" class="phase-filter" data-phase="5" />
+                <span>Phase 5 / Capstone</span>
+              </label>
+            </div>
+
+            <button id="resetFilters" class="btn btn-secondary btn-full" type="button">
+              Reset Filters
+            </button>
+          </aside>
+
+          <div class="courses-main">
+            <div class="courses-toolbar" data-reveal>
+              <div>
+                <p class="eyebrow">Full Library</p>
+                <h2 class="catalog-title">Browse every class outline</h2>
+              </div>
+
+              <div class="toolbar-actions">
+                <p class="results-count">
+                  <strong id="resultsCount">36</strong> classes visible
+                </p>
+
+                <label class="sort-field" for="sortSelect">
+                  <span class="field-label">Sort by</span>
+                  <select id="sortSelect" class="sort-select">
+                    <option value="class-asc">Class number: low to high</option>
+                    <option value="class-desc">Class number: high to low</option>
+                    <option value="title">Title: A to Z</option>
+                    <option value="phase">Phase</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div id="coursesList" class="courses-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-cta">
+        <div class="container catalog-cta-grid">
+          <div data-reveal>
+            <p class="eyebrow">Need Help Deciding?</p>
+            <h2 class="section-title section-title-left">
+              Ask the Solex team which path fits your current level.
+            </h2>
+          </div>
+
+          <div class="catalog-cta-actions" data-reveal>
+            <a href="mailto:support@solextech.com" class="btn btn-primary"
+              >Email Support</a
+            >
+            <a href="index.html#contact" class="btn btn-secondary"
+              >Back to Admissions</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand brand-footer">
+            <span class="brand-mark">ST</span>
+            <span class="brand-copy">
+              <span class="brand-name">Solex Technological Hub</span>
+              <span class="brand-tagline"
+                >Structured frontend training for modern web careers</span
+              >
+            </span>
+          </div>
+          <p class="footer-copy">
+            Professional frontend education with clear paths, practical projects,
+            and stronger product thinking.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html#paths">Learning Paths</a></li>
+            <li><a href="index.html#curriculum">Curriculum</a></li>
+            <li><a href="courses.html">All Courses</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h2>Resources</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="https://developer.mozilla.org/" target="_blank" rel="noreferrer"
+                >MDN Web Docs</a
+              >
+            </li>
+            <li>
+              <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"
+                >VS Code</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/" target="_blank" rel="noreferrer"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a href="https://frontendmasters.com/" target="_blank" rel="noreferrer"
+                >Frontend Masters</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h2>Contact</h2>
+          <ul class="footer-links">
+            <li><a href="mailto:support@solextech.com">support@solextech.com</a></li>
+            <li><a href="index.html#contact">Admissions</a></li>
+            <li><span>www.solextech.com</span></li>
+            <li><span>@SolexTechHub</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          <span id="currentYear">2026</span> Solex Technological Hub. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="courses-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
