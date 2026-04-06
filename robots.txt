@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adielesolomon.github.io/Solex-Technological-Hub/sitemap.xml

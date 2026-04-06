@@ -33,12 +33,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
 
 body {
   margin: 0;
   font-family: "Manrope", sans-serif;
   color: var(--text-strong);
+  text-rendering: optimizeLegibility;
   background:
     radial-gradient(circle at top right, rgba(245, 158, 11, 0.16), transparent 24%),
     radial-gradient(circle at 10% 15%, rgba(15, 139, 109, 0.08), transparent 20%),
@@ -1061,6 +1063,7 @@ aside {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-strong);
+  overflow-wrap: anywhere;
 }
 
 .contact-value {
@@ -1430,6 +1433,53 @@ aside {
   flex-wrap: wrap;
 }
 
+.not-found-page {
+  min-height: 100vh;
+}
+
+.not-found-shell {
+  min-height: calc(100vh - 12rem);
+  display: grid;
+  place-items: center;
+  padding: 5rem 0;
+}
+
+.not-found-card {
+  width: min(100%, 46rem);
+  padding: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(15, 139, 109, 0.12), transparent 28%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-md);
+}
+
+.not-found-kicker {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-found-title {
+  margin: 0.8rem 0 0;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.not-found-text {
+  margin: 1rem 0 0;
+  max-width: 38rem;
+  color: var(--text-body);
+  font-size: 1.03rem;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(18px);
@@ -1652,5 +1702,9 @@ aside {
   .phase-header,
   .course-card-header {
     padding: 1.4rem;
+  }
+
+  .not-found-card {
+    padding: 1.5rem;
   }
 }

@@ -112,6 +112,16 @@ function initializeSmoothScrolling() {
   });
 }
 
+function syncNavAriaCurrent(activeLink) {
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    if (link === activeLink || link.classList.contains("active")) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
 function initializeScrollSpy() {
   if (!("IntersectionObserver" in window)) return;
 
@@ -144,7 +154,9 @@ function initializeScrollSpy() {
         const currentId = entry.target.id;
         pageLinks.forEach((link) => link.classList.remove("active"));
         if (linkById.has(currentId)) {
-          linkById.get(currentId).classList.add("active");
+          const activeLink = linkById.get(currentId);
+          activeLink.classList.add("active");
+          syncNavAriaCurrent(activeLink);
         }
       });
     },
@@ -440,9 +452,19 @@ function initializeCurrentYear() {
   });
 }
 
+function initializeNavCurrentState() {
+  const activeLink =
+    document.querySelector(".nav-link.active") || document.querySelector(".nav-link");
+
+  if (activeLink) {
+    syncNavAriaCurrent(activeLink);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initializeMobileNavigation();
   initializeSmoothScrolling();
+  initializeNavCurrentState();
   initializeScrollSpy();
   initializeRevealAnimations();
   animateCounters();

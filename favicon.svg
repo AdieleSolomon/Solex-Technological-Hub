@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Solex Technological Hub favicon</title>
+  <desc id="desc">Rounded square badge with ST lettering</desc>
+  <defs>
+    <linearGradient id="bg" x1="12" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f8b6d" />
+      <stop offset="1" stop-color="#2d6cdf" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#101b26" />
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#bg)" />
+  <path
+    fill="#f8fafc"
+    d="M20.6 24.9c0-2.1 1.7-3.8 3.8-3.8h15.2v5.4H26v4h11.5c2 0 3.6 1.6 3.6 3.6v5.2c0 2.1-1.7 3.8-3.8 3.8H22v-5.4h13.8v-3.8H24.2c-2 0-3.6-1.6-3.6-3.6v-5.4Zm22.6-3.8h5.8v22h-5.8v-8.3h-7.3v-5.2h7.3V21.1Z" />
+</svg>
